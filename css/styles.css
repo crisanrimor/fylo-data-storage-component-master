@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root{
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.main{
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    position: relative;
+}
+
+.main::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__container{
+    width: 90%;
+    max-width: 75rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+
+.main__left{
+    width: 35%;
+    background-color: var(--dark-blue);
+    padding: 2.5em;
+    border-radius: 0.625rem;
+    border-top-right-radius: 7.5rem;
+}
+
+.main__logo{
+    display: block;
+    margin-bottom: 2.5em;
+}
+
+.main__icons{
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 0.625em;
+}
+
+.main__img{
+    background-color: var(--very-dark-blue);
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+}
+
+.main__icon{
+    display: block;
+    transform: scale(1.1);
+}
+
+.main__right{
+    width: 60%;
+    background-color: var(--dark-blue);
+    padding: 2.5em;
+    border-radius: 0.625rem;
+    position: relative;
+}
+
+.main__message{
+    position: absolute;
+    margin-top: -6.25em;
+    right: 3.125rem;
+    background-color: #fff;
+    width: 30%;
+    padding-top: 0.625em;
+    padding-bottom: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 89% 75%, 50% 75%, 0% 75%);
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+}
+
+.main__spacenumber{
+    font-size: 3rem;
+    color: var(--very-dark-blue);
+}
+
+.main__spaceleft{
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main__paragraph{
+    color: var(--pale-blue);
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.main__bar{
+    background-color: var(--very-dark-blue);
+    height: 1.375rem;
+    border-radius: 0.625rem;
+    margin: 0.9375em 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.main__progressbar{
+    position: absolute;
+    height: 0.9375rem;
+    left: 3px;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    width: 70%;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+}
+
+.main__progressbar::after{
+    content: "";
+    display: block;
+    background-color: var(--pale-blue);
+    width: 0.6875rem;
+    height: 0.6875rem;
+    right: 3px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.main__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .main__spacenumber{
+        font-size: 2.5rem;
+    }
+    
+    .main__spaceleft{
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px){
+
+    .main::before{
+        background-image: url(../images/bg-mobile.png);
+        inset: 0;
+        height: 100%;
+    }
+
+    .main__container{
+        flex-direction: column;
+        align-items: unset;
+        gap: 1.25rem;
+    }
+
+    .main__left{
+        width: 100%;
+        max-width: 25rem;
+    }
+    
+    .main__right{
+        width: 100%;
+    }
+
+    .main__message{
+        clip-path: none;
+        border-radius: 0.625rem;
+        padding: 0.625em;
+        left: 0;
+        right: 0;
+        bottom: -1.875rem;
+        margin: auto;
+    }
+
+    .main__spacenumber{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 475px){
+    .main__message{
+        width: 45%;
+    }
+
+    .main__paragraph{
+        font-size: 0.875rem;
+        text-align: center;
+    }
+
+    .bold{
+        font-size: 0.875rem; 
+    }
+
+}
